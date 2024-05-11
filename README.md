@@ -1,3 +1,6 @@
+[![NuGet version](https://badge.fury.io/nu/X.Web.UTM.svg)](https://badge.fury.io/nu/X.Web.UTM)
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/andrew_gubskiy.svg?style=social&label=Follow%20me!)](https://twitter.com/intent/user?screen_name=andrew_gubskiy)
+
 # X.Web.UTM
 
 **X.Web.UTM** is a versatile .NET library designed for efficiently handling Urchin Tracking Module (UTM) parameters, crucial for tracking web traffic sources in digital marketing. This library allows developers to parse, construct, and append UTM parameters to URLs, enhancing the capability to track the effectiveness of online advertising campaigns directly through the URL's query string.
