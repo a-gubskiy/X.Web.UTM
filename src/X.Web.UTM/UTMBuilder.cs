@@ -48,7 +48,14 @@ public class UTMBuilder
         }
         else
         {
-            uriBuilder.Query = uriBuilder.Query[1..] + "&" + queryToAppend;
+            if (uriBuilder.Query.Length > 1)
+            {
+                uriBuilder.Query = uriBuilder.Query.Substring(1) + "&" + queryToAppend;
+            }
+            else
+            {
+                uriBuilder.Query = queryToAppend;
+            }
         }
 
         var result = uriBuilder.Uri;
