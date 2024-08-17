@@ -54,27 +54,27 @@ public record UrchinTrackingModule
 
         if (!string.IsNullOrEmpty(Source))
         {
-            components.Add($"utm_source={Source}");
+            components.Add($"{UtmComponents.Source}={Source}");
         }
         
         if (!string.IsNullOrEmpty(Medium))
         {
-            components.Add($"utm_medium={Medium}");
+            components.Add($"{UtmComponents.Medium}={Medium}");
         }
         
         if (!string.IsNullOrEmpty(Campaign))
         {
-            components.Add($"utm_campaign={Campaign}");
+            components.Add($"{UtmComponents.Campaign}={Campaign}");
         }
         
         if (!string.IsNullOrEmpty(Term))
         {
-            components.Add($"utm_term={Term}");
+            components.Add($"{UtmComponents.Term}={Term}");
         }
         
         if (!string.IsNullOrEmpty(Content))
         {
-            components.Add($"utm_content={Content}");
+            components.Add($"{UtmComponents.Content}={Content}");
         }
 
         var result = string.Join("&", components);
