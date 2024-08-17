@@ -59,9 +59,7 @@ public class UTMBuilder
             }
         }
 
-        var result = uriBuilder.Uri;
-        
-        return result;
+        return uriBuilder.Uri;
     }
 
     /// <summary>

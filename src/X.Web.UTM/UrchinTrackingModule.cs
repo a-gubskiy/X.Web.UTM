@@ -7,7 +7,7 @@ namespace X.Web.UTM;
 /// https://en.wikipedia.org/wiki/UTM_parameters
 /// </summary>
 [PublicAPI]
-public class UrchinTrackingModule
+public record UrchinTrackingModule
 {
     public UrchinTrackingModule()
     {
