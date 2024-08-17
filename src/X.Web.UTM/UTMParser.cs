@@ -26,11 +26,11 @@ public class UTMParser
         
         var utm = new UrchinTrackingModule
         {
-            Source = queryParameters["utm_source"] ?? string.Empty,
-            Medium = queryParameters["utm_medium"] ?? string.Empty,
-            Campaign = queryParameters["utm_campaign"] ?? string.Empty,
-            Term = queryParameters["utm_term"] ?? string.Empty,
-            Content = queryParameters["utm_content"] ?? string.Empty
+            Source = queryParameters[UtmComponents.Source] ?? string.Empty,
+            Medium = queryParameters[UtmComponents.Medium] ?? string.Empty,
+            Campaign = queryParameters[UtmComponents.Campaign] ?? string.Empty,
+            Term = queryParameters[UtmComponents.Term] ?? string.Empty,
+            Content = queryParameters[UtmComponents.Content] ?? string.Empty
         };
 
         return utm;
