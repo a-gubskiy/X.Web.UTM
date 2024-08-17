@@ -1,0 +1,25 @@
+<Project>
+
+    <PropertyGroup>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+
+        <Authors>Andrew Gubskiy</Authors>
+        <Copyright>Andrew Gubskiy © 2024</Copyright>
+        <Company>Ukrainian .NET Developer Community</Company>
+
+        <Version>1.0.5</Version>
+        <AssemblyVersion>1.0.5</AssemblyVersion>
+        <FileVersion>1.0.5</FileVersion>
+        <PackageVersion>1.0.5</PackageVersion>
+
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/ernado-x/X.Web.UTM.git</RepositoryUrl>
+        <PackageProjectUrl>https://andrew.gubskiy.com/open-source</PackageProjectUrl>
+
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+</Project>
