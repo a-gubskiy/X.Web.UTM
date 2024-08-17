@@ -3,7 +3,10 @@
 
 # X.Web.UTM
 
-**X.Web.UTM** is a versatile .NET library designed for efficiently handling Urchin Tracking Module (UTM) parameters, crucial for tracking web traffic sources in digital marketing. This library allows developers to parse, construct, and append UTM parameters to URLs, enhancing the capability to track the effectiveness of online advertising campaigns directly through the URL's query string.
+**X.Web.UTM** is a versatile .NET library designed to efficiently handle Urchin Tracking Module (UTM) parameters, 
+which are crucial for tracking web traffic sources in digital marketing. This library allows developers to parse, 
+construct, and append UTM parameters to URLs, enhancing the capability to track the effectiveness of online advertising
+campaigns directly through the URL's query string.
 
 ## Key Features:
 - **Flexible UTM Parameter Management:** Easily create and manage UTM parameters with the `UrchinTrackingModule` class, which supports setting and retrieving properties such as `Source`, `Medium`, `Campaign`, `Term`, and `Content`.
