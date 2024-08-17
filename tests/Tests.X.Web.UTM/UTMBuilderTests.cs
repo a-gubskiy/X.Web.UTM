@@ -33,6 +33,48 @@ public class UTMBuilderTests
         // Assert
         Assert.Equal("https://example.com/?utm_source=google&utm_medium=email&utm_campaign=newsletter&utm_term=2024_spring&utm_content=link_click", resultUri.ToString());
     }
+    
+    [Fact]
+    public void Build_WithValidInput_ShouldAppendUTMParameters2()
+    {
+        // Arrange
+        var baseUri = new Uri("https://example.com?param1=123");
+        var utm = new UrchinTrackingModule
+        {
+            Source = "google",
+            Medium = "email",
+            Campaign = "newsletter",
+            Term = "2024_spring",
+            Content = "link_click"
+        };
+
+        // Act
+        var resultUri = _utmBuilder.Build(baseUri, utm);
+
+        // Assert
+        Assert.Equal("https://example.com/?param1=123&utm_source=google&utm_medium=email&utm_campaign=newsletter&utm_term=2024_spring&utm_content=link_click", resultUri.ToString());
+    }
+    
+    [Fact]
+    public void Build_WithValidInput_ShouldAppendUTMParameters3()
+    {
+        // Arrange
+        var baseUri = new Uri("https://example.com?utm_medium=xxx&param1=123");
+        var utm = new UrchinTrackingModule
+        {
+            Source = "google",
+            Medium = "email",
+            Campaign = "newsletter",
+            Term = "2024_spring",
+            Content = "link_click"
+        };
+
+        // Act
+        var resultUri = _utmBuilder.Build(baseUri, utm);
+
+        // Assert
+        Assert.Equal("https://example.com/?param1=123&utm_source=google&utm_medium=email&utm_campaign=newsletter&utm_term=2024_spring&utm_content=link_click", resultUri.ToString());
+    }
 
     [Fact]
     public void Build_WithExistingQuery_ShouldAppendUTMParametersCorrectly()

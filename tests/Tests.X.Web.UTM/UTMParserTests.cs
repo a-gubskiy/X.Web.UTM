@@ -26,7 +26,7 @@ public class UTMParserTests
     public void Parse_ValidUriWithAllParameters_ReturnsCorrectUTM()
     {
         var parser = new UTMParser();
-        var testUri = new Uri("http://example.com?utm_source=google&utm_medium=cpc&utm_campaign=test_campaign&utm_term=test_term&utm_content=test_content");
+        var testUri = new Uri("https://example.com?utm_source=google&utm_medium=cpc&utm_campaign=test_campaign&utm_term=test_term&utm_content=test_content");
 
         var result = parser.Parse(testUri);
 

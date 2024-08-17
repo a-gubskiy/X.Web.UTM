@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Web;
 using JetBrains.Annotations;
 
 namespace X.Web.UTM;
@@ -37,28 +39,43 @@ public class UTMBuilder
     {
         if (uri == null || utm == null)
         {
-            throw new ArgumentNullException(uri == null ? "uri" : "utm");
+            throw new ArgumentNullException(uri == null ? nameof(uri) : nameof(utm));
         }
 
         var uriBuilder = new UriBuilder(uri);
-        var queryToAppend = utm.ToString();
-        
-        if (string.IsNullOrEmpty(uriBuilder.Query))
+        var queryCollection = HttpUtility.ParseQueryString(uriBuilder.Query);
+
+        // List of UTM parameters to be removed
+        var utmParameters = new List<string>
         {
-            uriBuilder.Query = queryToAppend;
+            UtmComponents.Term,
+            UtmComponents.Content,
+            UtmComponents.Medium,
+            UtmComponents.Source,
+            UtmComponents.Campaign
+        };
+
+        // Remove any existing UTM parameters
+        foreach (var param in utmParameters)
+        {
+            queryCollection.Remove(param);
         }
-        else
+
+        // Append the new UTM parameters
+        var queryToAppend = utm.ToString();
+
+        if (!string.IsNullOrEmpty(queryToAppend))
         {
-            if (uriBuilder.Query.Length > 1)
+            var newQuery = HttpUtility.ParseQueryString(queryToAppend);
+            
+            foreach (string key in newQuery)
             {
-                uriBuilder.Query = uriBuilder.Query.Substring(1) + "&" + queryToAppend;
-            }
-            else
-            {
-                uriBuilder.Query = queryToAppend;
+                queryCollection[key] = newQuery[key];
             }
         }
 
+        uriBuilder.Query = queryCollection.ToString();
+        
         return uriBuilder.Uri;
     }
 
