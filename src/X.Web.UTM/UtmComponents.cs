@@ -1,8 +1,11 @@
+using JetBrains.Annotations;
+
 namespace X.Web.UTM;
 
 /// <summary>
 /// List of all UTM params
 /// </summary>
+[PublicAPI]
 public static class UtmComponents
 {
     public const string Term = "utm_term";
